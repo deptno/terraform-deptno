@@ -8,6 +8,7 @@ resource "aws_dynamodb_table" "deptno_tfstate" {
 		type = "S"
 	}
 }
+
 resource aws_s3_bucket deptno_tfstate {
 	bucket = "deptno_tfstate"
 	acl = "private"
