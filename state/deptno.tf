@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "deptno_tfstate" {
-	name = "deptno_tfstate"
+	name = "deptno-tfstate"
 	hash_key = "LockID"
 	billing_mode = "PAY_PER_REQUEST"
 	
@@ -10,7 +10,7 @@ resource "aws_dynamodb_table" "deptno_tfstate" {
 }
 
 resource aws_s3_bucket deptno_tfstate {
-	bucket = "deptno_tfstate"
+	bucket = "deptno-tfstate"
 	acl = "private"
 	force_destroy = "false"
 	logging {
@@ -21,7 +21,7 @@ resource aws_s3_bucket deptno_tfstate {
 	}
 }
 resource aws_s3_bucket deptno_tfstate_log {
-	bucket = "deptno_tfstate_log"
+	bucket = "deptno-tfstate-log"
 	acl = "log-delivery-write"
 	force_destroy = false
 }
