@@ -3,10 +3,12 @@ on:
   push:
     paths:
       - 'state/**'
+      - '.github/workflows/state.yml'
 jobs:
   terraform:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: set credentials
         run: |
           aws configure set region ap-northeast-2
