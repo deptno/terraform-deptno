@@ -4,7 +4,7 @@ on:
     branches:
       - master
     paths:
-      - 'state/**/*'
+      - 'state/**'
 jobs:
   terraform:
     runs-on: ubuntu-latest

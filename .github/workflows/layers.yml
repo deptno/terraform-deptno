@@ -4,7 +4,7 @@ on:
     branches:
       - master
     paths:
-      - 'layers/**/*'
+      - 'layers/**'
 jobs:
   terraform:
     runs-on: ubuntu-latest
