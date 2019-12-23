@@ -2,11 +2,13 @@ name: layers
 on:
   push:
     paths:
+      - '.github/workflows/layers.yml'
       - 'layers/**'
 jobs:
   terraform:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: set credentials
         run: |
           aws configure set region ap-northeast-2

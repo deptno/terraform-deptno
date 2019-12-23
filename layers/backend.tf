@@ -1,12 +1,12 @@
 data aws_dynamodb_table state {
-	name         = "deptno_tfstate"
+	name         = "deptno-tfstate"
 }
 terraform {
 	backend "s3" {
-		bucket = "deptno_state"
+		bucket = "deptno-tfstate"
 		region = "ap-northeast-2"
 		key = "deptno.tfstate"
 		encrypt = true
-		dynamodb_table = "detpno_tfstate"
+		dynamodb_table = "detpno-tfstate"
 	}
 }
