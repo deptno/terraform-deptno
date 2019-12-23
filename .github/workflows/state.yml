@@ -1,8 +1,6 @@
 name: state
 on:
   push:
-    branches:
-      - master
     paths:
       - 'state/**'
 jobs:

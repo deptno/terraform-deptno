@@ -1,8 +1,6 @@
 name: layers
 on:
   push:
-    branches:
-      - master
     paths:
       - 'layers/**'
 jobs:
