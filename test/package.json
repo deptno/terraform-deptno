@@ -1,0 +1,26 @@
+{
+  "name": "terraform-deptno-test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "sls deploy",
+    "deploy.html-to-png": "sls deploy -f html-to-png",
+    "log.html-to-png": "sls logs -t -f html-to-png"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-typescript": "^7.7.7",
+    "@types/aws-lambda": "^8.10.39",
+    "@types/node": "^12.12.22",
+    "@types/puppeteer-core": "^2.0.0",
+    "aws-sdk": "^2.596.0",
+    "babel-loader": "^8.0.6",
+    "chrome-aws-lambda": "^2.0.1",
+    "puppeteer-core": "^2.0.0",
+    "serverless": "^1.60.4",
+    "serverless-jetpack": "^0.7.0",
+    "serverless-webpack": "^5.3.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.4"
+  }
+}
