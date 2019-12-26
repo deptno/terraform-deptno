@@ -3,9 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "package": "sls package",
     "deploy": "sls deploy",
     "deploy.html-to-png": "sls deploy -f html-to-png",
-    "log.html-to-png": "sls logs -t -f html-to-png"
+    "deploy.serve-html": "sls deploy -f serve-html",
+    "log.html-to-png": "sls logs -t -f html-to-png",
+    "log.serve-html": "sls logs -t -f serve-html"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.7.7",
@@ -17,10 +20,12 @@
     "babel-loader": "^8.0.6",
     "chrome-aws-lambda": "^2.0.1",
     "puppeteer-core": "^2.0.0",
+    "ramda": "^0.26.1",
     "serverless": "^1.60.4",
     "serverless-jetpack": "^0.7.0",
     "serverless-webpack": "^5.3.1",
     "typescript": "^3.7.4",
     "webpack": "^4.41.4"
-  }
+  },
+  "dependencies": {}
 }

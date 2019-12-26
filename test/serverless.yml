@@ -26,9 +26,12 @@ provider:
 
 package:
   individually: true
+  exclude:
+    - '.terraform/**'
+    - 'node_modules/**'
+    - 'next/**'
 
 plugins:
-  - serverless-webpack
   - serverless-jetpack
 
 functions:
@@ -46,6 +49,31 @@ functions:
     events:
       - http:
           path: png
+          method: post
+          cors:
+            origin: '*'
+            maxAge: 86400
+      - http:
+          path: png
+          method: get
+          cors:
+            origin: '*'
+            maxAge: 86400
+
+  serve-html:
+    description: "test: next server for service dynamic html content"
+    handler: server.handler
+    package:
+      artifact: next/.artifact/next.zip
+    events:
+      - http:
+          path: /
+          method: get
+          cors:
+            origin: '*'
+            maxAge: 86400
+      - http:
+          path: /{proxy+}
           method: get
           cors:
             origin: '*'

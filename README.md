@@ -19,3 +19,10 @@
 생성한 레이어등을 사용하여 실제로 동작하는지 서버리스를 배포하고 테스트한다.
 또한 관련 인프라를 배포한다.
 
+```shell script
+cd next
+npm run next.build
+npm run next.artifact
+cd ..
+npm run deploy
+```

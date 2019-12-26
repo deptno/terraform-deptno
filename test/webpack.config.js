@@ -1,10 +1,16 @@
 const path = require('path')
 const slsw = require('serverless-webpack')
+const {omit} = require('ramda')
 
+console.log(omit(['server'], slsw.lib.entries))
 module.exports = {
   mode     : slsw.lib.webpack.isLocal ? 'development' : 'production',
-  entry    : slsw.lib.entries,
-  externals: ['aws-sdk', 'chrome-aws-lambda', 'puppeteer-core'],
+  entry    : omit(['server'], slsw.lib.entries),
+  externals: [
+    'aws-sdk',
+    'chrome-aws-lambda',
+    'puppeteer-core',
+  ],
   resolve  : {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
   },
